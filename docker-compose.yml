@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  postgres:
+    container_name: postgres_orderDB
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: orderDB
+    ports:
+      - "5433:5432"
+
+  pgadmin:
+    container_name: pgadmin4_OrderDB
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: root@shamsa.edu.s
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5080:80"
